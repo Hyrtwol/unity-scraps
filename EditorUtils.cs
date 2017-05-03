@@ -30,7 +30,6 @@ public static class EditorUtils
                 break;
             }
         }
-        //Debug.Log("Prelaunch Scene "+ prelaunchScene);
         if (string.IsNullOrEmpty(prelaunchScene)) return;
         if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
         {
@@ -42,11 +41,6 @@ public static class EditorUtils
     [MenuItem("Cauldron/List Scenes")]
     static void ListScenes()
     {
-        // // Find all Texture2Ds that have 'co' in their filename, that are labelled with 'concrete' or 'architecture' and are placed in 'MyAwesomeProps' folder
-        // string[] lookFor = new string[] { "Assets/MyAwesomeProps" };
-        // var guids = AssetDatabase.FindAssets("co l:concrete l:architecture t:texture2D", lookFor);
-        // // Find all assets labelled with 'concrete' :
-        // var guids = AssetDatabase.FindAssets("l:concrete");
         var sb  = new StringBuilder();
         sb.AppendLine("Scenes in project:");
         foreach (string guid in AssetDatabase.FindAssets("t:scene"))
